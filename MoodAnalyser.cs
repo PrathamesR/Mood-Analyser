@@ -15,10 +15,18 @@ namespace MoodAnalyserPackage
 
         public string CheckMood()
         {
-            if (mood.Contains("sad"))
-                return "The mood is Sad";
-            else
+            try
+            {
+
+                if (mood.Contains("sad"))
+                    return "The mood is Sad";
+                else
+                    return "The mood is Happy";
+            }
+            catch(Exception e)
+            {
                 return "The mood is Happy";
+            }
         }
     }
 }
