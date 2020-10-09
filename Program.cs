@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MoodAnalyser
+namespace MoodAnalyserPackage
 {
     class Program
     {
