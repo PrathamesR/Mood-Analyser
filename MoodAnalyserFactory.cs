@@ -21,5 +21,23 @@ namespace MoodAnalyserPackage
                 return null;
             }
         }
+
+        public static object CreateMoodAnalyser(string className, string message)
+        {
+            try
+            {
+                Assembly executing = Assembly.GetExecutingAssembly();
+                Type moodAnalyseType = executing.GetType(className);
+                ConstructorInfo constructor = moodAnalyseType.GetConstructor(new[] { typeof(string) });
+                
+                object obj = constructor.Invoke(new object[] { message });
+                return obj;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }   
     }
 }

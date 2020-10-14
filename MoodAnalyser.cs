@@ -43,6 +43,11 @@ namespace MoodAnalyserPackage
             this.mood = mood;
         }
 
+        public MoodAnalyser(string mood, string haha)
+        {
+
+        }
+
         public string CheckMood()
         {
             try
