@@ -31,7 +31,12 @@ namespace MoodAnalyserPackage
 
     public class MoodAnalyser
     {
-        string mood;
+        string mood = null;
+
+        public MoodAnalyser()
+        {
+
+        }
 
         public MoodAnalyser(string mood)
         {
