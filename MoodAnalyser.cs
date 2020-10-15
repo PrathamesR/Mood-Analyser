@@ -12,7 +12,10 @@ namespace MoodAnalyserPackage
             Empty = 1,
             Null = 2,
             ClassNotFound=3,
-            ConstructorNameDoesntMatch=4
+            ConstructorNameDoesntMatch=4,
+            MethodNameDoesntMatch=5,
+            NoSuchField=6,
+            NullMessage=7
         }
 
         public MoodAnalysisException(InvalidInput invalidInput) : base(ExceptionMessage(invalidInput))
@@ -28,7 +31,11 @@ namespace MoodAnalyserPackage
             else if (invalidInput == InvalidInput.ClassNotFound)
                 return "Class Not Found";
             else if (invalidInput == InvalidInput.ConstructorNameDoesntMatch)
-                return "Constructor Name is different than the class";
+                return "Constructor Name is different than the Class Name";
+            else if (invalidInput == InvalidInput.NoSuchField)
+                return "No such property exists";
+            else if (invalidInput == InvalidInput.NullMessage)
+                return "Null message passed";
             else
                 return "Theres an error in my code lol";                //code doesnt reach here
         }
@@ -37,7 +44,7 @@ namespace MoodAnalyserPackage
 
     public class MoodAnalyser
     {
-        string mood = null;
+        public string mood;
 
         public MoodAnalyser()
         {
