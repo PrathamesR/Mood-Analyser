@@ -10,7 +10,9 @@ namespace MoodAnalyserPackage
         public enum InvalidInput
         {
             Empty = 1,
-            Null = 2
+            Null = 2,
+            ClassNotFound=3,
+            ConstructorNameDoesntMatch=4
         }
 
         public MoodAnalysisException(InvalidInput invalidInput) : base(ExceptionMessage(invalidInput))
@@ -23,6 +25,10 @@ namespace MoodAnalyserPackage
                 return "No Input Provided";
             else if (invalidInput == InvalidInput.Empty)
                 return "Empty Input Provided";
+            else if (invalidInput == InvalidInput.ClassNotFound)
+                return "Class Not Found";
+            else if (invalidInput == InvalidInput.ConstructorNameDoesntMatch)
+                return "Constructor Name is different than the class";
             else
                 return "Theres an error in my code lol";                //code doesnt reach here
         }
